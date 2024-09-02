@@ -1,0 +1,10 @@
+#4CAF50 - Canlı Yeşil: Tazelik ve doğallığı simgeler.
+#FFA726 - Turuncu: Sıcaklık ve yaratıcılık için.
+#FF7043 - Mercan Kırmızısı: Enerji ve iştah uyandırıcı.
+#F44336 - Canlı Kırmızı: Dikkat çekici ve etkileyici.
+#8D6E63 - Kahverengi: Doğal ve rustik bir görünüm.
+#FFEB3B - Sarı: Neşe ve aydınlık bir atmosfer için.
+#C0CA33 - Zeytin Yeşili: Doğallık ve sağlıklı yaşam vurgusu.
+#FFFFFF - Beyaz: Temizlik ve sadelik.
+#795548 - Koyu Kahverengi: Rustik ve doğal vurgular için.
+#F8BBD0 - Soluk Pembe: Şefkatli ve sıcak bir his için.
