@@ -26,7 +26,7 @@ const AddImageModal = props => {
 
   const HandleOnPress = value => {
     UploadImage.PickImage(value).then(data => {
-      recognizeTextFromImage(data);
+      if (data !== undefined) recognizeTextFromImage(data);
     });
   };
 
@@ -56,7 +56,7 @@ const AddImageModal = props => {
                 source="close"
                 color={'white'}
                 size={30}
-                onPress={() => console.log('Pressed')}
+                onPress={() => props.setIsVisible(false)}
               />
             </View>
           </TouchableWithoutFeedback>
