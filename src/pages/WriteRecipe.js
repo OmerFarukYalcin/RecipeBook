@@ -38,6 +38,17 @@ const WriteRecipe = props => {
     });
   };
 
+  React.useEffect(() => {
+    const unsubscribe = props.navigation.addListener('beforeRemove', () => {
+      setRecipeData({
+        title: '',
+        content: '',
+      });
+    });
+
+    return unsubscribe;
+  }, [props.navigation]);
+
   return (
     <SafeAreaProvider style={styles.root}>
       <SafeAreaView style={styles.sView}>
