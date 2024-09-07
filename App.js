@@ -12,6 +12,16 @@ const App = () => {
     content: '',
   });
 
+  const htmlContent = `
+      <html>
+        <head><title>Başlık</title></head>
+        <body>
+          <h2 style="text-align:center; font-size:36px; color:#673ab7;" >This is a Heading</h2>
+          <p style="font-size:24px; color:black;" >${inputText}</p>
+        </body>
+      </html>
+    `;
+
   return (
     <RecipeContext.Provider
       value={{recipes, setRecipes, recipeData, setRecipeData}}>
