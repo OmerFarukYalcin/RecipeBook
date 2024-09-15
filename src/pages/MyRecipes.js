@@ -1,21 +1,13 @@
 import {Alert, FlatList, StyleSheet, View} from 'react-native';
 import React, {useContext, useEffect, useState} from 'react';
-import {
-  Avatar,
-  Button,
-  Card,
-  Divider,
-  FAB,
-  IconButton,
-  Menu,
-  Searchbar,
-} from 'react-native-paper';
+import {Avatar, Card, IconButton, Searchbar} from 'react-native-paper';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 import HeaderComponent from '../component/HeaderComponent';
 import LoadingGifModal from '../Modal/LoadingGifModal';
 import {RecipeContext} from '../contexts/RecipeContext';
 import {getDatabase, ref} from '@react-native-firebase/database';
 import api from '../../api/api';
+import Share from 'react-native-share';
 
 const MyRecipes = props => {
   const [loading, setLoading] = useState(true);
@@ -40,10 +32,25 @@ const MyRecipes = props => {
     });
   };
 
+  const shareRecipe = item => {
+    Share.open({title: 'Tarif Paylaş', message: item.content})
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        err && console.log(err);
+      });
+  };
+
   const renderItem = ({item}) => {
     const RenderRightIcon = ({params}) => {
       return (
         <View style={{flexDirection: 'row'}}>
+          <IconButton
+            {...params}
+            icon={'share-outline'}
+            onPress={() => shareRecipe(item)}
+          />
           <IconButton
             {...params}
             icon={'delete-outline'}
